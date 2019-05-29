@@ -99,7 +99,7 @@ namespace HackerRank_Exercises
             var dicH3 = sumasH3.ToDictionary(k => k);
 
 
-            if (sumasH1.Count <= sumasH2.Count && sumasH1.Count <= sumasH3.Count )
+            if (sumasH1.Count <= sumasH2.Count && sumasH1.Count <= sumasH3.Count)
             {
                 foreach (var sumah1 in sumasH1)
                 {
@@ -112,7 +112,7 @@ namespace HackerRank_Exercises
                     }
                 }
             }
-            if (sumasH2.Count <= sumasH1.Count && sumasH2.Count <= sumasH3.Count )
+            if (sumasH2.Count <= sumasH1.Count && sumasH2.Count <= sumasH3.Count)
             {
                 foreach (var sumah2 in sumasH2)
                 {
@@ -125,7 +125,7 @@ namespace HackerRank_Exercises
                     }
                 }
             }
-            if (sumasH3.Count <= sumasH1.Count && sumasH3.Count <= sumasH2.Count  )
+            if (sumasH3.Count <= sumasH1.Count && sumasH3.Count <= sumasH2.Count)
             {
                 foreach (var sumah3 in sumasH3)
                 {
@@ -137,8 +137,26 @@ namespace HackerRank_Exercises
                         }
                     }
                 }
-            }                           
+            }
             return 0;
+        }
+
+        public int sockMerchant(int n, int[] ar)
+        {            
+            var dictionaryColors= new Dictionary<int, int>();
+            for (int i = 0; i < ar.Length; i++)
+            {         
+                dictionaryColors[ar[i]] = dictionaryColors.ContainsKey(ar[i])? dictionaryColors[ar[i]]+1:1;
+            }
+
+            var countSocksColor = 0;
+
+            foreach (int sock in dictionaryColors.Values)
+            {
+                int resultado = sock / 2;
+                countSocksColor += resultado;
+            }
+            return countSocksColor;
         }
     }
 }

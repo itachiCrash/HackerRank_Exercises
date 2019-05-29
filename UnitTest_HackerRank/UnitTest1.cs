@@ -96,6 +96,15 @@ namespace UnitTest_HackerRank
 
             retorno = _algoritmo.equalStacks(h1, h2, h3);
         }
+
+        [TestMethod]
+        public void TestSocks()
+        {
+            var n = 9;
+            var arr = new int[] { 10, 20, 20, 10, 10, 30, 50, 10, 20 };
+            var r = _algoritmo.sockMerchant(n, arr);
+
+        }
     }
 }
 
