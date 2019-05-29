@@ -142,11 +142,11 @@ namespace HackerRank_Exercises
         }
 
         public int sockMerchant(int n, int[] ar)
-        {            
-            var dictionaryColors= new Dictionary<int, int>();
+        {
+            var dictionaryColors = new Dictionary<int, int>();
             for (int i = 0; i < ar.Length; i++)
-            {         
-                dictionaryColors[ar[i]] = dictionaryColors.ContainsKey(ar[i])? dictionaryColors[ar[i]]+1:1;
+            {
+                dictionaryColors[ar[i]] = dictionaryColors.ContainsKey(ar[i]) ? dictionaryColors[ar[i]] + 1 : 1;
             }
 
             var countSocksColor = 0;
@@ -157,6 +157,26 @@ namespace HackerRank_Exercises
                 countSocksColor += resultado;
             }
             return countSocksColor;
+        }
+
+        public int countingValleys(int n, string s)
+        {
+            int level = 0;
+            int countValleys = 0;
+            foreach (char letter in s)
+            {
+                var previousLevel = level;
+
+                if (letter == 'U')
+                    level++;
+                if (letter == 'D')
+                    level--;
+
+                if (level < 0 && previousLevel == 0)
+                    countValleys++;
+            }
+            return countValleys;
+
         }
     }
 }

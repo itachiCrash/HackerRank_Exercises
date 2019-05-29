@@ -105,6 +105,17 @@ namespace UnitTest_HackerRank
             var r = _algoritmo.sockMerchant(n, arr);
 
         }
+
+        [TestMethod]
+        public void TestValleys()
+        {
+            var s = "UDDDUDUU";
+            var r = _algoritmo.countingValleys(8, s);
+
+            s = "DDUUUUDD";
+            var r2 = _algoritmo.countingValleys(8, s);
+            Assert.IsTrue(r == 1 && r2 == 1);
+        }
     }
 }
 
