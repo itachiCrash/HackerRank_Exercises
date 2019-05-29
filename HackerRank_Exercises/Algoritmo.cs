@@ -5,7 +5,6 @@ namespace HackerRank_Exercises
 {
     public class Algoritmo
     {
-
         public string[] testBalancedBrackets(string[] values)
         {
             string[] retorno = new string[values.Length];
@@ -64,7 +63,6 @@ namespace HackerRank_Exercises
 
         public int equalStacks(int[] h1, int[] h2, int[] h3)
         {
-
             var totalH1 = 0;
             var totalH2 = 0;
             var totalH3 = 0;
